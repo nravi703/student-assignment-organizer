@@ -5,7 +5,7 @@ const db = require('./db.js');
 
 // Create the express application object
 const app = express();
-const port = 3000;
+const port = 8000;
  
 // Set up the view engine
 app.set('view engine', 'ejs');
