@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <% if (searchResults.length > 0) { %>
+        <table>
+            <tr>
+                <th>Title</th> 
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Student ID</th>
+            </tr>
+            <% searchResults.forEach(function (assignment) { %>
+                <tr>
+                    <td><%= assignment.name %></td>
+                    <td><%= assignment.description %></td>
+                    <td><%= assignment.due_date %></td>
+                    <td><%= assignment.status %></td>
+                    <td><%= assignment.student_id %></td>
+                </tr>
+            <% }); %>
+        </table>
+    <% } else { %>
+        <p>No results found.</p>
+    <% } %>
+    <a href="/search">Back to Search</a>
+</body>
+</html>

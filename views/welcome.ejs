@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: rgb(116, 0, 139);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid rgb(116, 0, 139);
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: rgb(116, 0, 139);
+            color: #fff;
+        }
+        .sign-out {
+            margin-top: 20px;
+            display: inline-block;
+            color: #fff;
+            background-color: rgb(116, 0, 139);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .sign-out:hover {
+            background-color: #d100a7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, <%= username %>!</h1>
+    <p>We are glad to have you back.</p>
+    <nav>
+        <ul>
+            <li><a href="/search">Search Assignments</a></li>
+            <li><a href="/progress">View Progress</a></li>
+            <li><a href="/calendar">Calendar</a></li>
+            <li><a href="/add-assignment">Add Assignment</a></li>
+        </ul>
+    </nav>
+    <a href="/logout" class="sign-out">Log out</a>
+    <p>Hope to see you again soon.</p>
+</body>
+</html>

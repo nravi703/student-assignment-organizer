@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - <%= appName %></title>
+    <link rel="stylesheet" href="/main.css">
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            color: rgb(116, 0, 139);
+        }
+        .calendar-container {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .calendar-day {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .calendar-day span {
+            font-weight: bold;
+        }
+        .calendar-day.due-soon {
+            background-color: #ffef96; /* Yellow for due soon */
+        }
+        .calendar-day.due-today {
+            background-color: #ff9999; /* Red for due today */
+        }
+        .calendar-day.completed {
+            background-color: #d4edda; /* Green for completed */
+        }
+        .no-assignments {
+            grid-column: span 7;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Assignment Calendar</h1>
+    <div class="calendar-container">
+        <% if (calendar && calendar.length > 0) { %>
+            <% calendar.forEach(function(event) { %>
+                <div 
+                    class="calendar-day 
+                        <% if (new Date(event.dueDate).toLocaleDateString() === new Date().toLocaleDateString()) { %>due-today<% } 
+                           else if (new Date(event.dueDate) < new Date()) { %>completed<% } 
+                           else { %>due-soon<% } %>">
+                    <span><%= event.title %></span>
+                    <p><%= new Date(event.dueDate).toLocaleDateString() %></p>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <div class="no-assignments">
+                <p>No assignments due this month.</p>
+            </div>
+        <% } %>
+    </div>
+</body>
+<a href="/">Back to Home</a>
+<a href="/welcome?username=Lily%20Hampton">Go to Welcome Page Lily </a> 
+<a href="/welcome?username=student1">Go to Welcome Page Student1 </a> 
+</body>
+</html>

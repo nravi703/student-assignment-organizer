@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <title>Add Assignment</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <h1>Add Assignment</h1>
+    <form method="POST" action="/assignment-added">
+        <p>Student ID: <input type="number" name="student_id" required></p> <!-- Student ID as foreign key -->
+        <p>Title: <input type="text" name="name" required></p>
+        <p>Description: <textarea name="description"></textarea></p>
+        <p>Due Date: <input type="date" name="due_date" required></p>
+        <p>Status: 
+            <select name="status" required>
+                <option value="Incomplete">Incomplete</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </p>
+        <input type="submit" value="Add Assignment">
+    </form>
+    <a href="/">Back to Home</a>
+    <a href="/welcome?username=Lily%20Hampton">Go to Welcome Page Lily </a> 
+    <a href="/welcome?username=student1">Go to Welcome Page Student1 </a> 
+</body>
+</html>
