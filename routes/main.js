@@ -184,7 +184,7 @@ router.post("/sign-in", (req, res) => {
         }
         
         // Successful login: Redirect to the welcome page with the username
-        res.redirect(`/welcome?username=${encodeURIComponent(user.username)}`);
+        res.redirect(`welcome?username=${encodeURIComponent(user.username)}`);
     });
 });
 
@@ -199,7 +199,7 @@ router.get("/welcome", (req, res) => {
 
 // Logout route
 router.get("/logout", (req, res) => {
-    res.redirect("/sign-in"); // Redirect to the sign-in page
+    res.redirect("sign-in"); // Redirect to the sign-in page
 });
 
 module.exports = router;
